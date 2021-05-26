@@ -60,9 +60,9 @@ void sky_curl_setopt_handler(INTERNAL_FUNCTION_PARAMETERS) {
             zval dup_header;
             ZVAL_DUP(&dup_header, zvalue);
             add_index_zval(&SKYWALKING_G(curl_header), cid, &dup_header);
-        } else {
-            orig_curl_setopt(INTERNAL_FUNCTION_PARAM_PASSTHRU);
         }
+
+        orig_curl_setopt(INTERNAL_FUNCTION_PARAM_PASSTHRU);
     }
 }
 
